@@ -1,0 +1,9 @@
+# Ignorar configurações do VSCode
+.vscode/
+
+# Ignorar arquivos temporários e comuns de sistema/editor
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
