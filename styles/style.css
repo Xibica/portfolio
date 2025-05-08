@@ -62,7 +62,8 @@ h2 {
 }
 
 a:visited{
-    color: inherit;
+    color: inherit !important;
+    text-decoration: none;
 }
 
 svg {
@@ -127,7 +128,6 @@ svg:hover, svg:focus {
     line-height: 1.2;
     
     max-width: 100%;
-    max-height: 60%;
 }
 /*quires intro*/
     @media (max-width: 390px){
@@ -247,7 +247,7 @@ header nav ul{
         #menu-links.active{
             display: flex;
 
-            background-color: rgba(62, 32, 82, 0.7);
+            background-color: rgba(62, 32, 82, 0.5);
             backdrop-filter: blur(8px);
             border-radius: 20px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.377);
