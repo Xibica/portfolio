@@ -155,7 +155,7 @@ svg:hover, svg:focus {
     max-width: 100%;
     max-height: 80%;
     
-    padding: 1ch; /*deixar,porem retirar caso der problema*/
+    padding: 0;
     box-sizing: border-box;
 
 }
@@ -312,25 +312,35 @@ header nav ul{
             border-radius: 20px;
             background-color: rgba(62, 32, 82, 0.5);
             backdrop-filter: blur(8px);
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.377);
+            filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
             
-
+            pointer-events: none;
             visibility: hidden;
-            transform: rotateX(-90deg); /* Inicialmente escondido */
-            opacity: 0; /* Transparente */
-            transform-origin: top; /* Define o ponto de rotação */
-            transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            transform: rotateX(-90deg); 
+            opacity: 0; 
+            transform-origin: top; 
+            transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, filter 0.4s ease-in-out;
 
             z-index: 9998;
             
         }
         #menu-links.active{
+            pointer-events: auto;
             visibility: visible;
             transform: rotateX(0);
             opacity: 1;
+            filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.4));
 
             gap: 2rem;
             padding: 1.5rem;
+        }
+
+        #menu-links.closing {
+            pointer-events: none; 
+            visibility: visible; 
+            transform: rotateX(-90deg); 
+            opacity: 0; 
+            filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
         }
 
         #menu-links li{

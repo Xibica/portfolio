@@ -30,8 +30,5 @@ setTimeout(() => {
 drop_down();
 
 //When click in WhatsApp icon:
-const whatsappIcon = document.getElementById('whatsappIcon');
-if(whatsappIcon)
-    whatsappIcon.addEventListener('click', whatsapp_action);
-else 
-    console.error('WhatsApp icon not found');
+whatsapp_action();
+

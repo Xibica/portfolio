@@ -6,7 +6,19 @@ export function drop_down(){
         dropMenuButton.addEventListener('click', () => {
             const isExpanded = dropMenuButton.getAttribute('aria-expanded') === 'true';
             dropMenuButton.setAttribute('aria-expanded', !isExpanded);
-            menuLinks.classList.toggle('active');
+
+            if(!menuLinks.classList.contains('active')){
+                menuLinks.classList.toggle('active');
+            }
+            else{
+            menuLinks.classList.add('closing');
+            }
+        });
+
+        menuLinks.addEventListener('transitionend', (event) => {
+            if (event.propertyName === 'transform' && menuLinks.classList.contains('closing')) {
+                menuLinks.classList.remove('active', 'closing');
+            }
         });
     }
 }
