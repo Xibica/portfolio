@@ -176,13 +176,24 @@ svg:hover, svg:focus {
         }
     }
 
-    @media (min-width: 391px) and (max-width: 450px){
+    @media (min-width: 391px) and (max-width: 420px){
         html{
             font-size: 15px;
         }
 
         #intro-writer{
-            font-size: 1.1rem;
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+    }
+
+    @media (min-width: 420px) and (max-width: 600px){
+        html{
+            font-size: 15px;
+        }
+
+        #intro-writer{
+            font-size: 1.2rem;
             line-height: 1.3;
         }
     }
