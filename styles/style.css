@@ -111,7 +111,7 @@ svg:hover, svg:focus {
     background-color: var(--terminalAndcontrast-color);
     color: var(--text-color);
 
-    position: absolute;
+    position: fixed;
     z-index: 9999;
 
     height: 100vh;
@@ -123,6 +123,10 @@ svg:hover, svg:focus {
 
     transition: opacity 2s cubic-bezier(0.64, 0, 0.78, 0);
     cursor: none;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 #intro-writer{
     display: block;
@@ -132,9 +136,36 @@ svg:hover, svg:focus {
     line-height: 1.2;
     
     max-width: 100%;
+    max-height: 80%;
+    
+    padding: 0;
+    box-sizing: border-box;
+
 }
 /*quires intro*/
-    @media (max-width: 390px){
+    @media (max-width: 339px){
+        html{
+            font-size: 14px;
+        }
+
+        #intro-writer{
+            font-size: 0.9rem;
+            line-height: 1.2;
+        }
+    }
+
+    @media (min-width: 340px) and (max-width: 364px){
+        html{
+            font-size: 14px;
+        }
+
+        #intro-writer{
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+    }
+
+    @media (min-width: 365px) and (max-width: 390px){
         html{
             font-size: 14px;
         }
@@ -155,6 +186,11 @@ svg:hover, svg:focus {
             line-height: 1.3;
         }
     }
+.space{
+    display: block;
+    height: 2rem;
+    width: 100%;
+}
 .cursor{
     display: inline-block;
     animation: blink 0.4s step-end infinite; 
