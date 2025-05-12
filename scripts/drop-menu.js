@@ -13,11 +13,20 @@ export function drop_down(){
             else{
             menuLinks.classList.add('closing');
             }
+
+            event.stopPropagation();
         });
 
         menuLinks.addEventListener('transitionend', (event) => {
             if (event.propertyName === 'transform' && menuLinks.classList.contains('closing')) {
                 menuLinks.classList.remove('active', 'closing');
+            }
+        });
+
+        document.addEventListener('click', (event) => {
+            if (menuLinks.classList.contains('active') && !menuLinks.contains(event.target) && event.target !== dropMenuButton) {
+                menuLinks.classList.add('closing');
+                dropMenuButton.setAttribute('aria-expanded', false);
             }
         });
     }
