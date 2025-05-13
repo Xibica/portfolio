@@ -11,7 +11,7 @@ export function drop_down(){
                 menuLinks.classList.toggle('active');
             }
             else{
-            menuLinks.classList.add('closing');
+                menuLinks.classList.add('closing');
             }
 
             event.stopPropagation();

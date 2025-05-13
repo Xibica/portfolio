@@ -1,4 +1,5 @@
 import {type} from './type-writer.js';
+import {remake} from './responsivity.js';
 import {drop_down} from './drop-menu.js';
 import {whatsapp_action} from './whatsapp.js';
 
@@ -13,8 +14,8 @@ const textTerminalIntro = [
 const typeWriter = document.getElementById("intro-writer");
 const introTerminal = document.getElementById("intro-terminal");
 const content = document.getElementById("content");
-const timePause = 650;
-const delay = 35;
+const timePause = 1; //650 e 32
+const delay = 1;
 setTimeout(() => {
     type(textTerminalIntro, typeWriter, delay, () =>{
         content.style.display = "flex";
@@ -25,6 +26,9 @@ setTimeout(() => {
         });
     }, timePause);
 }, timePause);
+//responsive treatment
+remake();
+window.addEventListener("resize", remake);
 
 //When click in the button menu
 drop_down();

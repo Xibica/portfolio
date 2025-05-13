@@ -195,7 +195,7 @@ svg:hover, svg:focus {
     box-sizing: border-box;
 
 }
-/*quires intro*/
+/*quires font intro/legibility*/
     @media (max-width: 339px){
         html{
             font-size: 13px;
@@ -410,19 +410,25 @@ main{
 }
     @media (max-width: 768px) {
         main{
-            padding: 1rem 2rem;
+            padding: 0.5rem 1rem;
         }
     }
 
 #front-section{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 3rem;
 
     height: auto;
+    width: 100%;
 
     padding: 2rem 2rem;
-    gap: 4rem;
+
+    letter-spacing: 1px;
+
 }
 #front-section.v-border::before{
     width: 50%;
@@ -432,68 +438,74 @@ main{
 #about-me{
     display: flex;
     flex-direction: column;
-    
 
     gap: 1rem;
     width: 60%;
-    height: 100%;
+    min-width: 600px;
+    height: auto;
 }
 
 #about-me.animated-section{
     animation: fadeInUp 2.5s ease forwards;
-    animation-delay: 1.03s;
+    animation-delay: 1s;
 }
 
 #about-me h1{
     align-self: flex-start;
 
-    font-size: 4.5rem;
+    font-size: 4rem;
     text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
 }
 
 #about-me p{
-    letter-spacing: 1px;
     border-bottom: solid 1px var(--efects-color);
 }
 
 #projects {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: inherit;
     justify-content: center;
 
-    gap: 1rem;
     padding: 1rem;
 
-    height: 100%;
-    width: 40%;
+    width: 35%;
+    min-width: 400px;
+    height: auto;
     
 }
 
 #projects.animated-section{
     animation: fadeInUp 2.5s ease forwards;
-    animation-delay: 1.03s;
+    animation-delay: 1s;
 }
 
 #projects .v-border::before{
     background-size: 90% 8px, 8px 90%; 
 }
-#projects h2{
-    font-size: 2.25rem;
+
+.h2lu{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-self: flex-end;
+}
+.h2lu h2{
+    font-size: 2rem;
     text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
 }
 
-#projects ul{
+.h2lu ul{
     display: flex;
     flex-direction: column;
-    list-style: upper-roman;
+    list-style: none;
 
-    padding-top: 1rem;
-    padding-left: 2.2rem;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
     gap: 1.5rem;
 }
 
-#projects .link{
+.h2lu .link{
     font-size: 1rem;
     font-weight: 400;
 
@@ -501,14 +513,75 @@ main{
     color: var(--text-color);
 
 }
-#projects .link:hover, .link:focus {
+.h2lu .link:hover, .link:focus {
     transform: scale(1) translateY(0);
 }
-#projects .link::after{
+.h2lu .link::after{
     background-color: var(--efects-color);
     bottom: -5%;
     height: 1px;
 }
+/*front section queries*/
+    @media (max-width: 1271px){
+        #about-me {
+            width: 100%;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #about-me h1 {
+            align-self: center;
+            font-size: 3rem; 
+        }
+
+        #projects {
+            width: 100%;
+            align-items: center;
+        }
+        
+        .h2lu{
+            align-self: center;
+        }
+
+        .h2lu h2{
+            align-self: center;
+        }
+
+    }
+        @media (max-width: 768px){
+            #front-section{
+                letter-spacing: 2px;
+                line-height: 25px;
+            }
+
+            #about-me {
+                min-width: 0;
+
+            }
+
+            #projects {
+                min-width: 0;
+            }
+
+            .h2lu ul{
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content:space-around ;
+
+                padding: 0.5rem;
+                row-gap: 20px;
+            }
+
+            .h2lu li{
+                height: auto;
+                width: auto;
+            }
+
+            .h2lu h2{
+                align-self: center;
+            }
+        } 
 
 /*animations*/
 @keyframes blink {
