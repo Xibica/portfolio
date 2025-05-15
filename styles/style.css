@@ -78,13 +78,13 @@ a:visited{
     text-decoration: none;
 }
 
-svg {
+.svg-link {
     color: var(--anothers-color);
     height: 30px;
     width: 30px;
     transition: filter 0.4s, transform 0.4s ;
 }
-svg:hover, svg:focus {
+.svg-link:hover, .svg-link:focus {
     filter: drop-shadow(0 0 7px var(--efects-color)); 
     transform: scale(1.16);
 }
@@ -151,6 +151,15 @@ svg:hover, svg:focus {
     pointer-events: none;
     border-radius: 6px; 
 }
+
+.animate-flip-first {
+    animation: flip-first 0.25s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+.animate-flip-second {
+    animation: flip-second 0.25s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
 
 /*intro*/
 #content{
@@ -431,7 +440,7 @@ main{
 
 }
 #front-section.v-border::before{
-    width: 50%;
+    width: 110%;
     height: 90%;
 }
 
@@ -490,10 +499,6 @@ main{
     gap: 1rem;
     align-self: flex-end;
 }
-.h2lu h2{
-    font-size: 2rem;
-    text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
-}
 
 .h2lu ul{
     display: flex;
@@ -521,8 +526,42 @@ main{
     bottom: -5%;
     height: 1px;
 }
+#title-button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+#title-button button{
+    width: 2.7rem;
+    height: 2.3rem;
+    border-radius: 40%;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--secondary-color);
+    border-style: none;
+}
+#title-button h2{
+    font-size: 2rem;
+    text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
+}
+#title-button #trade-mode svg{
+    color: var(--efects-color);
+}
+
 /*front section queries*/
     @media (max-width: 1271px){
+        #front-section{
+            padding: 3rem 3rem;
+            letter-spacing: 2px;
+            line-height: 2rem;
+            font-size: 1.2rem;
+        }
+
         #about-me {
             width: 100%;
             align-items: center;
@@ -543,15 +582,20 @@ main{
             align-self: center;
         }
 
-        .h2lu h2{
+        #title-button{
+            justify-content: center;
+            align-items: center;
             align-self: center;
+            
         }
 
     }
-        @media (max-width: 768px){
+        @media (max-width: 766px){
             #front-section{
+                padding: 3rem 2.5rem;
                 letter-spacing: 2px;
-                line-height: 25px;
+                line-height: 2rem;
+                font-size: 1rem;
             }
 
             #about-me {
@@ -578,7 +622,7 @@ main{
                 width: auto;
             }
 
-            .h2lu h2{
+            #title-button{
                 align-self: center;
             }
         } 
@@ -599,4 +643,14 @@ main{
         opacity: 1;
         transform: translateY(0);
         }
+}
+
+@keyframes flip-first {
+    0% { transform: rotateX(0); }
+    100% { transform: rotateX(-90deg); }
+}
+
+@keyframes flip-second {
+    0% { transform: rotateX(-90deg); }
+    100% { transform: rotateX(0); }
 }

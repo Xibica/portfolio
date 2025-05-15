@@ -1,6 +1,7 @@
 import {type} from './type-writer.js';
 import {remake} from './responsivity.js';
 import {drop_down} from './drop-menu.js';
+import {tradeMode} from './projects-button.js';
 import {whatsapp_action} from './whatsapp.js';
 
 //calling intro
@@ -26,12 +27,16 @@ setTimeout(() => {
         });
     }, timePause);
 }, timePause);
+
 //responsive treatment
 remake();
 window.addEventListener("resize", remake);
 
 //When click in the button menu
 drop_down();
+
+//When click in the button projects
+tradeMode();
 
 //When click in WhatsApp icon:
 whatsapp_action();
