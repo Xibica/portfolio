@@ -13,6 +13,8 @@ const gitHref = [
     'https://www.tiktok.com/foryou',
 ]
 
+const border = document.querySelector('#projectsUL');
+
 const button = document.getElementById("trade-mode");
 const links = document.querySelectorAll("#projectsUL a");
 const htmlIcon = `
@@ -38,7 +40,14 @@ export function tradeMode() {
 
                 links.forEach((link, index) => {
                     link.href = showingGithub ? webHref[index] : gitHref[index];
+                    setTimeout(() =>{
+                        link.classList.add("glow");
+                        link.addEventListener("animationend", () => {
+                            link.classList.remove("glow")
+                        });
+                    },index * 160)
                 });
+
                 button.innerHTML = showingGithub ? htmlIcon : gitIcon;
                 showingGithub = !showingGithub;
 
