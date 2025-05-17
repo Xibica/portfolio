@@ -24,7 +24,8 @@
 
 body, html{
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 html {
@@ -43,8 +44,6 @@ body {
     display: flex;
     flex-direction: column;
 
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
 
 body::before {
@@ -470,8 +469,18 @@ main{
     text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
 }
 
+#about-me #carrosel{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
 #about-me p{
     border-bottom: solid 1px var(--efects-color);
+}
+
+#scroll-indicator{
+    display: none;
 }
 
 #projects {
@@ -573,17 +582,32 @@ main{
 /*front section queries*/
     @media (max-width: 1271px){
         #front-section{
-            padding: 3rem 3rem;
+            padding: 1rem 3rem;
             letter-spacing: 3px;
             line-height: 2.2rem;
             font-size: 1.2rem;
+
+        }
+
+        #front-section.v-border::before{
+            width: 0;
+            height: 0;
+            background: none;
         }
 
         #about-me {
-            width: 100%;
             align-items: center;
             text-align: center;
             gap: 1.3rem;
+
+            font-size: 1.5rem;
+            width: 100%;
+            min-width: 0;
+
+
+            position: relative; 
+            overflow: hidden; 
+
         }
         
         #about-me h1 {
@@ -591,15 +615,89 @@ main{
             font-size: 3rem; 
         }
 
+        #about-me #carrosel{
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory; 
+            -webkit-overflow-scrolling: touch; 
+            scrollbar-width: none;
+        }
+
+        #about-me #carrosel p{
+
+            width: 100%; 
+            align-self: center;
+            padding: 1rem 2rem;
+            box-sizing: border-box;
+            scroll-snap-align: start; 
+            flex-shrink: 0; 
+            text-align: left; 
+            height: auto; 
+
+            border-bottom: none;
+        }
+
+        #scroll-indicator{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 8rem;
+            height: 2rem;
+            gap: 8px;
+
+            background: var(--secondary-color);
+            border-style:none ;
+            border-radius: 120px;
+            padding: 8px 16px;
+            box-shadow: 0 3px 6px rgba(163, 81, 214, 0.4);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #555;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+            }
+
+        .dot.active {
+            opacity: 1;
+            background: var(--efects-color);
+        }
+
+
             
         #projects {
-            width: 100%;
+            height: auto;
             align-items: center;
+
+            width: 100%;
+            min-width: 0;
+
         }
         
         .h2lu{
             align-self: center;
         }
+
+        .h2lu ul{
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content:flex-start ;
+
+            padding: 0.5rem;
+            row-gap: 20px;
+            }
+
+        .h2lu li{
+            height: auto;
+            width: auto;
+            }
 
         #title-button{
             justify-content: center;
@@ -610,44 +708,20 @@ main{
 
     }
         @media (max-width: 766px){
-            .v-border::before{
-                background-size: 90% 13px, 13px 90%;
-            }
             #front-section{
-                padding: 3rem 2.2rem;
+                padding: 1rem 2.2rem;
                 letter-spacing: 2px;
                 line-height: 2rem;
                 font-size: 1rem;
             }
 
-            #about-me {
-                min-width: 0;
-
+            #about-me{
+                font-size: 1rem;
             }
-
-            #projects {
-                min-width: 0;
-            }
-
             .h2lu ul{
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content:space-around ;
-
-                padding: 0.5rem;
-                row-gap: 20px;
+                justify-content:center;
             }
-
-            .h2lu li{
-                height: auto;
-                width: auto;
-            }
-
-            #title-button{
-                align-self: center;
-            }
-        } 
+}
 
 /*animations*/
 @keyframes blink {
