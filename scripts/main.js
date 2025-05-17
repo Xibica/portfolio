@@ -2,6 +2,7 @@ import {type} from './type-writer.js';
 import {remake} from './responsivity.js';
 import {drop_down} from './drop-menu.js';
 import {tradeMode} from './projects-button.js';
+import {scrollDots} from './aboutMe-scroll.js';
 import {whatsapp_action} from './whatsapp.js';
 
 //calling intro
@@ -37,6 +38,9 @@ drop_down();
 
 //When click in the button projects
 tradeMode();
+
+//scrollDots;
+scrollDots();
 
 //When click in WhatsApp icon:
 whatsapp_action();
