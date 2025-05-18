@@ -1,5 +1,6 @@
 import {type} from './type-writer.js';
 import {remake} from './responsivity.js';
+import {setupSmoothScroll} from './setupScroll.js';
 import {drop_down} from './drop-menu.js';
 import {tradeMode} from './projects-button.js';
 import {scrollDots} from './aboutMe-scroll.js';
@@ -32,6 +33,9 @@ setTimeout(() => {
 //responsive treatment
 remake();
 window.addEventListener("resize", remake);
+
+//setup scrolling with href
+setupSmoothScroll();
 
 //When click in the button menu
 drop_down();
