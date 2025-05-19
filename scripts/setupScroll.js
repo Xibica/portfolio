@@ -1,5 +1,5 @@
 export function setupSmoothScroll() {
-    // Função principal de scroll
+
     const smoothScrollTo = (target) => {
         const header = document.querySelector('header');
         const headerHeight = header ? header.offsetHeight : 0;
@@ -8,13 +8,12 @@ export function setupSmoothScroll() {
         if (element) {
             const offset = element.getBoundingClientRect().top + window.pageYOffset;
             window.scrollTo({
-                top: offset - headerHeight - 20, // 20px de margem
+                top: offset - headerHeight - 20, 
                 behavior: 'smooth'
             });
         }
     };
 
-    // Aplica a todos os links âncora
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -22,7 +21,6 @@ export function setupSmoothScroll() {
         });
     });
 
-    // Corrige a posição ao carregar a página com hash na URL
     const handleHashScroll = () => {
         if (window.location.hash) {
             setTimeout(() => {

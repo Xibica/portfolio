@@ -18,7 +18,7 @@
     --secondary-color: rgba(62, 32, 82, 1);
     --efects-color: rgba(163, 81, 214, 0.541);
     --shadow-color: rgba(38, 10, 61, 0.616);
-    --anothers-color: rgb(45, 3, 207);
+    --anothers-color: rgb(63, 40, 156);
     --text-color: rgba(255, 255, 255, 1);
 }
 
@@ -574,7 +574,7 @@ main{
     border-style: none;
 
     box-shadow: 
-    0 2.5px 2px rgba(163, 81, 214, 0.5),           
+    0 2px 1px 2px rgba(163, 81, 214, 0.4),           
     inset 0 -5px 0 var(--secondary-color),
     0 0 30px 2px rgba(0, 0, 0, 0.2);
     transition: all 0.15s ease-in-out;
@@ -614,7 +614,7 @@ main{
         #about-me {
             align-items: center;
             text-align: center;
-            gap: 1.3rem;
+            gap: 2.5rem;
             padding-top: 1rem;
 
             font-size: 1.6rem;
@@ -642,7 +642,7 @@ main{
             scrollbar-width: none;
 
             background-color: var(--secondary-color);
-            box-shadow: 0 4px 3px rgba(163, 81, 214, 0.5),
+            box-shadow: 0 3px 2px 3px rgba(163, 81, 214, 0.5),
                         0 0 30px 5px rgba(0, 0, 0, 0.2);
             border-radius: 30px;
 
@@ -669,7 +669,6 @@ main{
             transition: all 1s cubic-bezier(0.22, 0.61, 0.36, 1);
             opacity: 0;
             filter: blur(2px);
-            
 
         }
 
@@ -705,16 +704,16 @@ main{
 
         .carrosel-arrow:hover, .carrosel-arrow:focus {
             transform: translateY(-50%) scale(1.2);
-            color: var(--efects-color);
+            color: var(--anothers-color);
         }
 
         .carrosel-arrow.left {
-            left: -6%;
+            left: -7%;
             transform-origin: right;
         }
 
         .carrosel-arrow.right {
-            right: -6%;
+            right: -7%;
             transform-origin: left;
         }
 
@@ -738,7 +737,7 @@ main{
             border-style:none ;
             border-radius: 120px;
             padding: 8px 16px;
-            box-shadow: 0 2.5px 2px rgba(163, 81, 214, 0.5),
+            box-shadow: 0 2px 1.5px 2px rgba(163, 81, 214, 0.5),
                         0 0 20px 5px rgba(0, 0, 0, 0.2);
             margin-bottom: 2px;
             
@@ -756,11 +755,9 @@ main{
 
         .dot.active {
             opacity: 1;
-            background: var(--efects-color);
+            background: var(--anothers-color);
             transform: scale(1.2);
         }
-
-
             
         #projects {
             height: auto;
@@ -769,10 +766,16 @@ main{
             width: 100%;
             min-width: 0;
 
-            background-color: var();
+            background-color: var(--secondary-color);
 
+            background-color: var(--secondary-color);
+            box-shadow: 0 3px 2px 3px rgba(163, 81, 214, 0.5),
+            0 0 30px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+
+            padding: 0.8rem 1rem;
         }
-        
+
         .h2lu{
             align-self: center;
         }
@@ -789,6 +792,7 @@ main{
 
         .h2lu .link{
             font-size: 1.2rem;
+            text-shadow: 0 2px 4px var(--shadow-color);
         }
 
         .h2lu li{
@@ -800,9 +804,8 @@ main{
             justify-content: center;
             align-items: center;
             align-self: center;
-            
         }
-
+        
     }
         @media (max-width: 768px){
             #front-section{
@@ -822,24 +825,20 @@ main{
                 font-size: 1rem;
             }
 
-        .carrosel-arrow.left {
-            left: -14.5%;
-            transform-origin: right;
-        }
+            .carrosel-arrow.left {
+                left: -14.5%;
+                transform-origin: right;
+            }
 
-        .carrosel-arrow.right {
-            right: -14.5%;
-            transform-origin: left;
-        }
-}
+            .carrosel-arrow.right {
+                right: -14.5%;
+                transform-origin: left;
+            }
+    }
 
             @media (max-width: 375px){
                 #about-me h1{
                     font-size: 2.7rem;
-                }
-
-                .h2lu .link{
-                    font-size: 0.9rem;
                 }
     }
 
