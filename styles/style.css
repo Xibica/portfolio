@@ -431,7 +431,7 @@ main{
     }
         @media (max-width: 768px) {
             main{
-                padding: 0rem 1rem;
+                padding: 0rem 0rem;
             }
         }
 
@@ -826,12 +826,12 @@ main{
             }
 
             .carrosel-arrow.left {
-                left: -14.5%;
+                left: -11%;
                 transform-origin: right;
             }
 
             .carrosel-arrow.right {
-                right: -14.5%;
+                right: -11%;
                 transform-origin: left;
             }
     }
@@ -839,6 +839,14 @@ main{
             @media (max-width: 375px){
                 #about-me h1{
                     font-size: 2.7rem;
+                }
+                .carrosel-arrow.left {
+                    left: -12%;
+                    transform-origin: right;
+                }
+                .carrosel-arrow.right {
+                    right: -12%;
+                    transform-origin: left;
                 }
     }
 
